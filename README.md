@@ -40,6 +40,10 @@ The development server will run on port 8080 by default. If that port is already
   - Lint-on-save with ESLint
   - Source maps
 
+- `npm run dev:sync`: Browser-Sync based development experience.
+  - Similar to `webpack-dev-server`.
+  - Proxy an entire site except for bundle files.
+
 - `npm run build`: Production ready build.
   - JavaScript minified with [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony).
   - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
