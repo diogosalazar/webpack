@@ -12,6 +12,14 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - Lint-on-save with ESLint
 - Source maps
 
+### `npm run dev:sync`
+
+> Starts a Node.js local development server using Browser-Sync. See [Site Proxying During Development](site-proxy.md) for more details.
+
+- Similar to `webpack-dev-server`.
+- Proxy an entire site except for bundle files.
+- Synchronizes testing across multiple browsers.
+
 ### `npm run build`
 
 > Build assets for production. See [Integrating with Backend Framework](backend.md) for more details.
