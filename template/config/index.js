@@ -58,6 +58,9 @@ module.exports = {
      */
 
     productionSourceMap: true,
+    useHashes: true,
+    noSplit: false,
+    htmlFileNeeded: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 
