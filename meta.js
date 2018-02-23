@@ -44,7 +44,7 @@ module.exports = {
       type: 'string',
       required: false,
       message: 'Project description',
-      default: 'A Vue.js project',
+      default: 'A QAD.com project',
     },
     author: {
       when: 'isNotTest',
@@ -57,22 +57,17 @@ module.exports = {
       message: 'Vue build',
       choices: [
         {
-          name: 'Runtime + Compiler: recommended for most users',
-          value: 'standalone',
-          short: 'standalone',
-        },
-        {
           name:
             'Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere',
           value: 'runtime',
           short: 'runtime',
         },
+        {
+          name: 'Runtime + Compiler: recommended for most users',
+          value: 'standalone',
+          short: 'standalone',
+        },
       ],
-    },
-    router: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Install vue-router?',
     },
     lint: {
       when: 'isNotTest',
@@ -84,6 +79,11 @@ module.exports = {
       type: 'list',
       message: 'Pick an ESLint preset',
       choices: [
+        {
+          name: 'QAD (https://bitbucket.org/qad-marcom/eslint-config-qad)',
+          value: 'qad',
+          short: 'QAD',
+        },
         {
           name: 'Standard (https://github.com/standard/standard)',
           value: 'standard',
@@ -100,6 +100,11 @@ module.exports = {
           short: 'none',
         },
       ],
+    },
+    router: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install vue-router?',
     },
     unit: {
       when: 'isNotTest',
@@ -140,14 +145,14 @@ module.exports = {
         'Should we run `npm install` for you after the project has been created? (recommended)',
       choices: [
         {
-          name: 'Yes, use NPM',
-          value: 'npm',
-          short: 'npm',
-        },
-        {
           name: 'Yes, use Yarn',
           value: 'yarn',
           short: 'yarn',
+        },
+        {
+          name: 'Yes, use NPM',
+          value: 'npm',
+          short: 'npm',
         },
         {
           name: 'No, I will handle that myself',
