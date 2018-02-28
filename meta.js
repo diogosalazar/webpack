@@ -101,6 +101,11 @@ module.exports = {
         },
       ],
     },
+    modules: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Enable CSS Modules?',
+    },
     router: {
       when: 'isNotTest',
       type: 'confirm',
