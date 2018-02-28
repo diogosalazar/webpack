@@ -13,6 +13,7 @@ module.exports = {
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
     'plugin:vue/essential',
+    {{#modules}}'plugin:css-modules/recommended',{{/modules}}
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -22,6 +23,7 @@ module.exports = {
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
     'plugin:vue/essential',
+    {{#modules}}'plugin:css-modules/recommended',{{/modules}}
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'qad'
   ],
@@ -29,16 +31,17 @@ module.exports = {
   {{#if_eq lintConfig "airbnb"}}
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential', 'airbnb-base'],
+  extends: ['plugin:vue/essential', 'airbnb-base'{{#modules}}, 'plugin:css-modules/recommended'{{/modules}}],
   {{/if_eq}}
   {{#if_eq lintConfig "none"}}
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential'],
+  extends: ['plugin:vue/essential'{{#modules}}, 'plugin:css-modules/recommended'{{/modules}}],
   {{/if_eq}}
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue'{{#modules}},
+    'css-modules'{{/modules}}
   ],
   {{#if_eq lintConfig "airbnb"}}
   // check if imports actually resolve
