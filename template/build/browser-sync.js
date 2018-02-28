@@ -54,7 +54,9 @@ webpackConfigPromise.then(webpackConfig => {
   // Virtual Middleware used to ignore files from proxied server
   const virtualMiddleware = (req, res, next) => {
     const regex = new RegExp(webpackConfig.devServer.publicPath, 'igm')
-    if (url.parse(req.url).pathname.match(regex)) { res.end(''); } else { next(); }
+    try {
+      if (url.parse(req.url).pathname.match(regex)) { res.end(''); } else { next(); }
+    } catch (e) { next(); }
   };
 
   // Set middlewares in use
